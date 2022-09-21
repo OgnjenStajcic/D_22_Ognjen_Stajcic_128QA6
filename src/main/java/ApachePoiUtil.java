@@ -30,12 +30,13 @@ public class ApachePoiUtil {
     }
 
 
-    public static void writeExcel(String fileName) throws IOException {
+    public static void writeExcel(String path) throws IOException {
 
         Faker faker = new Faker();
 
-        XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet("Sheet1");
+        FileInputStream fileInputStream = new FileInputStream("domaci22.xlsx");
+        XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
+        XSSFSheet sheet = workbook.getSheet("Sheet1");
 
         for (int i = 2; i < 10; i++) {
 
